@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ajouter une nouvelle tâche</h1>
+    <form method="POST" id="taskForm">
+        <label for="username">Votre nom :</label>
+        <input type="text" name="username" id="username">
+        <label for="title">Nom de la tâche</label>
+        <input type="text" name="title" id="title">
+        <label for="description">Description de la tâche</label>
+        <input type="text" name="description" id="description">
+        <input type="submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <pre>
+    </pre>
+    <h1>Liste des tâches</h1>
+    <a href="/add">Ajouter une novelle tâche</a>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <ul>
+            <li>Auteur : {{ task.user.name }}</li>
+            <li>Titre : {{ task.title }}</li>
+            <li>Description : {{ task.description }}</li>
+            <li>Etat : {{ task.complete ? 'Fait' : 'A faire' }}</li>
+        </ul>
+        <a href="{{ path('task_update', {'id': task.id}) }}">Modifier cette tache</a>
+        <a href="{{ path('task_delete', {'id': task.id}) }}">Supprimer cette tache</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
