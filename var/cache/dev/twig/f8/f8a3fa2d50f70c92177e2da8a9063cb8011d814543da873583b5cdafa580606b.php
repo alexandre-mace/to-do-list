@@ -56,7 +56,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
     ";
         }
         // line 10
-        echo "    <ul class=\"list-group list-group-flush\">
+        echo "    <ul id=\"sortable\" class=\"list-group list-group-flush\">
         ";
         // line 11
         $context['_parent'] = $context;
@@ -140,7 +140,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
           <p class=\"lead text-center\">You've made it, now it's time to have fun <br><i class=\"mt-3 fas fa-grin-beam fa-10x\"></i></p>
         </div>         
     {% endif %}
-    <ul class=\"list-group list-group-flush\">
+    <ul id=\"sortable\" class=\"list-group list-group-flush\">
         {% for task in tasks %}
             <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\">
                 <div class=\"d-flex flex-column\">
