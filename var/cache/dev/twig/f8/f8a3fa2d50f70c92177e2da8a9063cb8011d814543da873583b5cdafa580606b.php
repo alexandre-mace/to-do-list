@@ -63,31 +63,29 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
         $context['_seq'] = twig_ensure_traversable(($context["tasks"] ?? $this->getContext($context, "tasks")));
         foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
             // line 12
-            echo "            <li class=\"list-group-item d-flex justify-content-between ";
-            echo (($this->getAttribute($context["task"], "complete", array())) ? ("disabled") : (""));
+            echo "            <li class=\"list-group-item  d-flex justify-content-between ";
+            echo (($this->getAttribute($context["task"], "complete", array())) ? ("list-group-item-success") : (""));
             echo "\">
                 <div class=\"d-flex flex-column\">
                     <h2>";
             // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "title", array()), "html", null, true);
-            echo "</h2>
-                    <span>By ";
-            // line 15
+            echo " <span class=\"badge badge-primary badge-pill\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "user", array()), "name", array()), "html", null, true);
-            echo "</span>
+            echo "</span></h2>
                     <p>";
-            // line 16
+            // line 15
             echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "description", array()), "html", null, true);
             echo "</p>
                 </div>
                 
                 <div class=\"d-flex flex-column\">
                     <a class=\"btn btn-success\" href=\"";
-            // line 20
+            // line 19
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_update", array("id" => $this->getAttribute($context["task"], "id", array()))), "html", null, true);
             echo "\"><i class=\"fas fa-check fa-2x\"></i></a>
                     <a class=\"btn btn-danger mt-3\" href=\"";
-            // line 21
+            // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_delete", array("id" => $this->getAttribute($context["task"], "id", array()))), "html", null, true);
             echo "\"><i class=\"fas fa-trash-alt fa-2x\"></i></a>
                 </div>
@@ -97,7 +95,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['task'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 24
         echo "    </ul>
 ";
         
@@ -120,7 +118,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
 
     public function getDebugInfo()
     {
-        return array (  101 => 25,  91 => 21,  87 => 20,  80 => 16,  76 => 15,  72 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  99 => 24,  89 => 20,  85 => 19,  78 => 15,  72 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -144,10 +142,9 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
     {% endif %}
     <ul class=\"list-group list-group-flush\">
         {% for task in tasks %}
-            <li class=\"list-group-item d-flex justify-content-between {{ task.complete  ? 'disabled' }}\">
+            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\">
                 <div class=\"d-flex flex-column\">
-                    <h2>{{ task.title }}</h2>
-                    <span>By {{ task.user.name }}</span>
+                    <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.user.name }}</span></h2>
                     <p>{{ task.description }}</p>
                 </div>
                 
@@ -158,6 +155,6 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
             </li>
         {% endfor %}
     </ul>
-{% endblock %}", "task/list.html.twig", "/home/alex/Bureau/to_do_list/app/Resources/views/task/list.html.twig");
+{% endblock %}", "task/list.html.twig", "/home/alex/Bureau/ecv/php/to_do_list/app/Resources/views/task/list.html.twig");
     }
 }

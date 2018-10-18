@@ -9,10 +9,9 @@
     {% endif %}
     <ul class="list-group list-group-flush">
         {% for task in tasks %}
-            <li class="list-group-item d-flex justify-content-between {{ task.complete  ? 'disabled' }}">
+            <li class="list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}">
                 <div class="d-flex flex-column">
-                    <h2>{{ task.title }}</h2>
-                    <span>By {{ task.user.name }}</span>
+                    <h2>{{ task.title }} <span class="badge badge-primary badge-pill">{{ task.user.name }}</span></h2>
                     <p>{{ task.description }}</p>
                 </div>
                 
