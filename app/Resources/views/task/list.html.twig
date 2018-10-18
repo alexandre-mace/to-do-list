@@ -9,10 +9,10 @@
     {% endif %}
     <ul class="list-group list-group-flush">
         {% for task in tasks %}
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-flex justify-content-between {{ task.complete  ? 'disabled' }}">
                 <div class="d-flex flex-column">
-                    <h2>{{ task.title }} - <span>{{ task.complete ? 'Done' : 'To do' }}</span></h2>
-                    <span>By : {{ task.user.name }}</span>
+                    <h2>{{ task.title }}</h2>
+                    <span>By {{ task.user.name }}</span>
                     <p>{{ task.description }}</p>
                 </div>
                 

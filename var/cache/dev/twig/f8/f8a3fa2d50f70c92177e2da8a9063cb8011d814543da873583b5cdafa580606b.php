@@ -63,15 +63,15 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
         $context['_seq'] = twig_ensure_traversable(($context["tasks"] ?? $this->getContext($context, "tasks")));
         foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
             // line 12
-            echo "            <li class=\"list-group-item d-flex justify-content-between\">
+            echo "            <li class=\"list-group-item d-flex justify-content-between ";
+            echo (($this->getAttribute($context["task"], "complete", array())) ? ("disabled") : (""));
+            echo "\">
                 <div class=\"d-flex flex-column\">
                     <h2>";
             // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "title", array()), "html", null, true);
-            echo " - <span>";
-            echo (($this->getAttribute($context["task"], "complete", array())) ? ("Done") : ("To do"));
-            echo "</span></h2>
-                    <span>By : ";
+            echo "</h2>
+                    <span>By ";
             // line 15
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "user", array()), "name", array()), "html", null, true);
             echo "</span>
@@ -120,7 +120,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
 
     public function getDebugInfo()
     {
-        return array (  101 => 25,  91 => 21,  87 => 20,  80 => 16,  76 => 15,  70 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  101 => 25,  91 => 21,  87 => 20,  80 => 16,  76 => 15,  72 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -144,10 +144,10 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
     {% endif %}
     <ul class=\"list-group list-group-flush\">
         {% for task in tasks %}
-            <li class=\"list-group-item d-flex justify-content-between\">
+            <li class=\"list-group-item d-flex justify-content-between {{ task.complete  ? 'disabled' }}\">
                 <div class=\"d-flex flex-column\">
-                    <h2>{{ task.title }} - <span>{{ task.complete ? 'Done' : 'To do' }}</span></h2>
-                    <span>By : {{ task.user.name }}</span>
+                    <h2>{{ task.title }}</h2>
+                    <span>By {{ task.user.name }}</span>
                     <p>{{ task.description }}</p>
                 </div>
                 
@@ -158,6 +158,6 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
             </li>
         {% endfor %}
     </ul>
-{% endblock %}", "task/list.html.twig", "/home/alex/Bureau/taskSymfony/app/Resources/views/task/list.html.twig");
+{% endblock %}", "task/list.html.twig", "/home/alex/Bureau/to_do_list/app/Resources/views/task/list.html.twig");
     }
 }
