@@ -2,6 +2,9 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Task;
+
+
 /**
  * TaskRepository
  *
@@ -10,4 +13,28 @@ namespace AppBundle\Repository;
  */
 class TaskRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAll()
+    {
+        return $this->findBy(array(), array('position' => 'ASC'));
+    }
+
+    public function findByGreaterStartPositionAndLowerOrEqualEndPosition($positionStart, $positionEnd) {
+        $qb = $this->createQueryBuilder('t')
+            ->where('t.position > :positionStart')
+            ->andWhere('t.position <= :positionEnd')
+            ->setParameter('positionStart', $positionStart)
+            ->setParameter('positionEnd', $positionEnd)
+            ->getQuery();
+        return $qb->execute();    
+    }
+
+    public function findByLowerStartPositionAndGreaterOrEqualEndPosition($positionStart, $positionEnd) {
+        $qb = $this->createQueryBuilder('t')
+            ->where('t.position < :positionStart')
+            ->andWhere('t.position >= :positionEnd')
+            ->setParameter('positionStart', $positionStart)
+            ->setParameter('positionEnd', $positionEnd)
+            ->getQuery();
+        return $qb->execute();    
+    }
 }

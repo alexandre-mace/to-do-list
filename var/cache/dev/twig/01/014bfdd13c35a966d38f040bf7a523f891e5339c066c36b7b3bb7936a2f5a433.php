@@ -46,52 +46,63 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <pre>
-    </pre>
-    <h1>Liste des tâches</h1>
-    <a href=\"/add\">Ajouter une novelle tâche</a>
-<ul>
+        echo "    ";
+        if (twig_test_empty(($context["tasks"] ?? $this->getContext($context, "tasks")))) {
+            // line 5
+            echo "        <div class=\"jumbotron\">
+          <h1 class=\"display-4 text-center\">Congratulations!</h1>
+          <p class=\"lead text-center\">You've made it, now it's time to have fun <br><i class=\"mt-3 fas fa-grin-beam fa-10x\"></i></p>
+        </div>         
     ";
-        // line 9
+        }
+        // line 10
+        echo "    <ul id=\"sortable\" class=\"list-group list-group-flush\">
+        ";
+        // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["tasks"] ?? $this->getContext($context, "tasks")));
         foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
-            // line 10
-            echo "    <li>
-        <ul>
-            <li>Auteur : ";
             // line 12
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "user", array()), "name", array()), "html", null, true);
-            echo "</li>
-            <li>Titre : ";
-            // line 13
-            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "title", array()), "html", null, true);
-            echo "</li>
-            <li>Description : ";
+            echo "            <li class=\"list-group-item  d-flex justify-content-between ";
+            echo (($this->getAttribute($context["task"], "complete", array())) ? ("list-group-item-success") : (""));
+            echo "\" data-index=";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "position", array()), "html", null, true);
+            echo " data-id=";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "id", array()), "html", null, true);
+            echo " data-url=";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_update_position", twig_escape_filter($this->env, array("id" => $this->getAttribute($context["task"], "id", array())), "js")), "html", null, true);
+            echo ">
+                <div class=\"d-flex flex-column\">
+                    <h2>";
             // line 14
-            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "description", array()), "html", null, true);
-            echo "</li>
-            <li>Etat : ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "title", array()), "html", null, true);
+            echo " <span class=\"badge badge-primary badge-pill\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "author", array()), "name", array()), "html", null, true);
+            echo "</span></h2>
+                    <p>";
             // line 15
-            echo (($this->getAttribute($context["task"], "complete", array())) ? ("Fait") : ("A faire"));
-            echo "</li>
-        </ul>
-        <a href=\"";
-            // line 17
+            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "description", array()), "html", null, true);
+            echo "</p>
+                </div>
+                
+                <div class=\"d-flex flex-column\">
+                    <a class=\"btn btn-success\" href=\"";
+            // line 19
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_update", array("id" => $this->getAttribute($context["task"], "id", array()))), "html", null, true);
-            echo "\">Modifier cette tache</a>
-        <a href=\"";
-            // line 18
+            echo "\"><i class=\"fas fa-check fa-2x\"></i></a>
+                    <a class=\"btn btn-danger mt-3\" href=\"";
+            // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_delete", array("id" => $this->getAttribute($context["task"], "id", array()))), "html", null, true);
-            echo "\">Supprimer cette tache</a>
-    </li>
-    ";
+            echo "\"><i class=\"fas fa-trash-alt fa-2x\"></i></a>
+                </div>
+            </li>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['task'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
-        echo "</ul>
+        // line 24
+        echo "    </ul>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -113,7 +124,7 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
 
     public function getDebugInfo()
     {
-        return array (  94 => 21,  85 => 18,  81 => 17,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  60 => 10,  56 => 9,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  105 => 24,  95 => 20,  91 => 19,  84 => 15,  78 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,24 +140,27 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <pre>
-    </pre>
-    <h1>Liste des tâches</h1>
-    <a href=\"/add\">Ajouter une novelle tâche</a>
-<ul>
-    {% for task in tasks %}
-    <li>
-        <ul>
-            <li>Auteur : {{ task.user.name }}</li>
-            <li>Titre : {{ task.title }}</li>
-            <li>Description : {{ task.description }}</li>
-            <li>Etat : {{ task.complete ? 'Fait' : 'A faire' }}</li>
-        </ul>
-        <a href=\"{{ path('task_update', {'id': task.id}) }}\">Modifier cette tache</a>
-        <a href=\"{{ path('task_delete', {'id': task.id}) }}\">Supprimer cette tache</a>
-    </li>
-    {% endfor %}
-</ul>
-{% endblock %}", "task/list.html.twig", "/var/www/html/ECV/PHP/taskSymfony/app/Resources/views/task/list.html.twig");
+    {% if tasks is empty %}
+        <div class=\"jumbotron\">
+          <h1 class=\"display-4 text-center\">Congratulations!</h1>
+          <p class=\"lead text-center\">You've made it, now it's time to have fun <br><i class=\"mt-3 fas fa-grin-beam fa-10x\"></i></p>
+        </div>         
+    {% endif %}
+    <ul id=\"sortable\" class=\"list-group list-group-flush\">
+        {% for task in tasks %}
+            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\" data-index={{task.position}} data-id={{task.id}} data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
+                <div class=\"d-flex flex-column\">
+                    <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.author.name }}</span></h2>
+                    <p>{{ task.description }}</p>
+                </div>
+                
+                <div class=\"d-flex flex-column\">
+                    <a class=\"btn btn-success\" href=\"{{ path('task_update', {'id': task.id}) }}\"><i class=\"fas fa-check fa-2x\"></i></a>
+                    <a class=\"btn btn-danger mt-3\" href=\"{{ path('task_delete', {'id': task.id}) }}\"><i class=\"fas fa-trash-alt fa-2x\"></i></a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}", "task/list.html.twig", "/var/www/to_do_list/app/Resources/views/task/list.html.twig");
     }
 }
