@@ -47,6 +47,13 @@ class Task
      */
     private $author;
 
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position;
+
     /**
      * Get id
      *
@@ -165,6 +172,30 @@ class Task
     public function setAuthor($author)
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of position
+     *
+     * @return  int
+     */ 
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Set the value of position
+     *
+     * @param  int  $position
+     *
+     * @return  self
+     */ 
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
 
         return $this;
     }

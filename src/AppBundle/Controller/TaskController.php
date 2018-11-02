@@ -11,6 +11,7 @@ use AppBundle\Handler\AddTaskHandler;
 use AppBundle\Handler\UpdateTaskHandler;
 use AppBundle\Handler\DeleteTaskHandler;
 use AppBundle\Form\TaskType;
+use AppBundle\Handler\UpdateTaskPositionHandler;
 
 class TaskController extends Controller
 {
@@ -44,6 +45,15 @@ class TaskController extends Controller
     public function updateAction(Task $task, UpdateTaskHandler $handler)
     {
         $handler->handle($task);
+        return $this->redirectToRoute('task_list');
+    }
+
+    /**
+     * @Route("/task/update/position/{id}", name="task_update_position")
+     */
+    public function updatePositionAction(Task $task, UpdateTaskPositionHandler $handler)
+    {
+        $handler->handle($task, $_POST);
         return $this->redirectToRoute('task_list');
     }
 

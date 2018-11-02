@@ -65,7 +65,9 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
             // line 12
             echo "            <li class=\"list-group-item  d-flex justify-content-between ";
             echo (($this->getAttribute($context["task"], "complete", array())) ? ("list-group-item-success") : (""));
-            echo "\">
+            echo "\" data-url=";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_update_position", twig_escape_filter($this->env, array("id" => $this->getAttribute($context["task"], "id", array())), "js")), "html", null, true);
+            echo ">
                 <div class=\"d-flex flex-column\">
                     <h2>";
             // line 14
@@ -118,7 +120,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
 
     public function getDebugInfo()
     {
-        return array (  99 => 24,  89 => 20,  85 => 19,  78 => 15,  72 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  101 => 24,  91 => 20,  87 => 19,  80 => 15,  74 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -142,7 +144,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
     {% endif %}
     <ul id=\"sortable\" class=\"list-group list-group-flush\">
         {% for task in tasks %}
-            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\">
+            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\" data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
                 <div class=\"d-flex flex-column\">
                     <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.author.name }}</span></h2>
                     <p>{{ task.description }}</p>

@@ -128,9 +128,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\TaskController::addAction',  '_route' => 'task_add',);
             }
 
-            // task_update
-            if (0 === strpos($pathinfo, '/task/update') && preg_match('#^/task/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_update')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::updateAction',));
+            if (0 === strpos($pathinfo, '/task/update')) {
+                // task_update
+                if (preg_match('#^/task/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_update')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::updateAction',));
+                }
+
+                // task_update_position
+                if (0 === strpos($pathinfo, '/task/update/position') && preg_match('#^/task/update/position/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_update_position')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::updatePositionAction',));
+                }
+
             }
 
             // task_delete
