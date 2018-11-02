@@ -9,7 +9,7 @@
     {% endif %}
     <ul id="sortable" class="list-group list-group-flush">
         {% for task in tasks %}
-            <li class="list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}" data-index={{task.position}} data-id={{task.id}} data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
+            <li class="list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}" data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
                 <div class="d-flex flex-column">
                     <h2>{{ task.title }} <span class="badge badge-primary badge-pill">{{ task.author.name }}</span></h2>
                     <p>{{ task.description }}</p>

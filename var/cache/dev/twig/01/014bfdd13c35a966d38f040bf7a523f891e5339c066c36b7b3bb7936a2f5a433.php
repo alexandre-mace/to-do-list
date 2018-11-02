@@ -65,11 +65,7 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
             // line 12
             echo "            <li class=\"list-group-item  d-flex justify-content-between ";
             echo (($this->getAttribute($context["task"], "complete", array())) ? ("list-group-item-success") : (""));
-            echo "\" data-index=";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "position", array()), "html", null, true);
-            echo " data-id=";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "id", array()), "html", null, true);
-            echo " data-url=";
+            echo "\" data-url=";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_update_position", twig_escape_filter($this->env, array("id" => $this->getAttribute($context["task"], "id", array())), "js")), "html", null, true);
             echo ">
                 <div class=\"d-flex flex-column\">
@@ -124,7 +120,7 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
 
     public function getDebugInfo()
     {
-        return array (  105 => 24,  95 => 20,  91 => 19,  84 => 15,  78 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  101 => 24,  91 => 20,  87 => 19,  80 => 15,  74 => 14,  66 => 12,  62 => 11,  59 => 10,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,7 +144,7 @@ class __TwigTemplate_c8aad1f165d4d779ddf633c76ad21db1217491659c753ca723d307c185b
     {% endif %}
     <ul id=\"sortable\" class=\"list-group list-group-flush\">
         {% for task in tasks %}
-            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\" data-index={{task.position}} data-id={{task.id}} data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
+            <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\" data-url={{ path('task_update_position', {'id': task.id}|escape('js') ) }}>
                 <div class=\"d-flex flex-column\">
                     <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.author.name }}</span></h2>
                     <p>{{ task.description }}</p>
