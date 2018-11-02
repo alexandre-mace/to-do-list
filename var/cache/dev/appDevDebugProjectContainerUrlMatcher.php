@@ -122,19 +122,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_task_list:
 
-        // task_add
-        if ('/add' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\TaskController::addAction',  '_route' => 'task_add',);
+        if (0 === strpos($pathinfo, '/task')) {
+            // task_add
+            if ('/task/add' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\TaskController::addAction',  '_route' => 'task_add',);
+            }
+
+            // task_update
+            if (0 === strpos($pathinfo, '/task/update') && preg_match('#^/task/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_update')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::updateAction',));
+            }
+
+            // task_delete
+            if (0 === strpos($pathinfo, '/task/delete') && preg_match('#^/task/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_delete')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::deleteAction',));
+            }
+
         }
 
-        // task_update
-        if (0 === strpos($pathinfo, '/update') && preg_match('#^/update/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_update')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::updateAction',));
-        }
-
-        // task_delete
-        if (0 === strpos($pathinfo, '/delete') && preg_match('#^/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_delete')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::deleteAction',));
+        // user_add
+        if ('/user/add' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::addAction',  '_route' => 'user_add',);
         }
 
         if ('/' === $pathinfo && !$allow) {

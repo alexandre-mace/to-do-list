@@ -50,7 +50,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
                     ";
         // line 17
         $this->displayBlock('header', $context, $blocks);
-        // line 29
+        // line 32
         echo "                </div>
             </div>
         </div>
@@ -58,16 +58,16 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
             <div class=\"row\">
                 <div class=\"col\">
                     ";
-        // line 35
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 37
+        // line 40
         echo "                </div>
             </div>
         </div>
         ";
-        // line 40
+        // line 43
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 48
+        // line 51
         echo "    </body>
 </html>";
         
@@ -132,13 +132,19 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
                             <h1 class=\"display-4\">Welcome to the to do list!</h1>
                             <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task.</p>
                             <hr class=\"my-4\">
-                            <div class=\"w-100 text-center\">
-                                <a class=\"text-center btn btn-primary\" href=\"";
+                            <div class=\"w-100 d-flex justify-content-center\">
+                                <a class=\"mx-auto btn btn-primary mr-auto\" href=\"";
         // line 23
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("task_add");
         echo "\">
                                     <i class=\"fas fa-plus fa-2x\"></i>
                                 </a>
+                                <a class=\"btn btn-success\" href=\"";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_add");
+        echo "\">
+                                    <i class=\"fas fa-user-plus fa-2x\"></i>
+                                </a>                                
                             </div>
                         </div>
                     ";
@@ -150,7 +156,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
 
     }
 
-    // line 35
+    // line 38
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -159,7 +165,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 36
+        // line 39
         echo "                    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -169,7 +175,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
 
     }
 
-    // line 40
+    // line 43
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -178,7 +184,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 41
+        // line 44
         echo "            <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>
@@ -206,7 +212,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
 
     public function getDebugInfo()
     {
-        return array (  182 => 41,  173 => 40,  163 => 36,  154 => 35,  138 => 23,  131 => 18,  122 => 17,  109 => 7,  100 => 6,  82 => 5,  71 => 48,  69 => 40,  64 => 37,  62 => 35,  54 => 29,  52 => 17,  42 => 11,  40 => 6,  36 => 5,  30 => 1,);
+        return array (  188 => 44,  179 => 43,  169 => 39,  160 => 38,  144 => 26,  138 => 23,  131 => 18,  122 => 17,  109 => 7,  100 => 6,  82 => 5,  71 => 51,  69 => 43,  64 => 40,  62 => 38,  54 => 32,  52 => 17,  42 => 11,  40 => 6,  36 => 5,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -240,10 +246,13 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
                             <h1 class=\"display-4\">Welcome to the to do list!</h1>
                             <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task.</p>
                             <hr class=\"my-4\">
-                            <div class=\"w-100 text-center\">
-                                <a class=\"text-center btn btn-primary\" href=\"{{ path('task_add') }}\">
+                            <div class=\"w-100 d-flex justify-content-center\">
+                                <a class=\"mx-auto btn btn-primary mr-auto\" href=\"{{ path('task_add') }}\">
                                     <i class=\"fas fa-plus fa-2x\"></i>
                                 </a>
+                                <a class=\"btn btn-success\" href=\"{{ path('user_add') }}\">
+                                    <i class=\"fas fa-user-plus fa-2x\"></i>
+                                </a>                                
                             </div>
                         </div>
                     {% endblock %}

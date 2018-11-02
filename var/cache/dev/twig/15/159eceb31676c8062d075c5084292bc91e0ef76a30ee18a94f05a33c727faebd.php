@@ -71,17 +71,30 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 12
-        echo "    <form method=\"POST\" id=\"taskForm\">
-        <label for=\"username\">Your name</label>
-        <input class=\"form-control\" type=\"text\" placeholder=\"Your name\" name=\"username\">
-        <label for=\"title\">Task name</label>
-        <input class=\"form-control\" type=\"text\" placeholder=\"Task name\" name=\"title\">
-        <div class=\"form-group\">
-            <label for=\"description\">Task Description</label>
-            <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\" name=\"description\"></textarea>
-        </div>
-        <button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
-    </form>
+        echo "\t";
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        echo "
+\t\t";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "author", array()), 'row');
+        echo "
+\t\t";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", array()), 'row');
+        echo "
+\t\t";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "description", array()), 'row');
+        echo "
+\t\t";
+        // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "complete", array()), 'row');
+        echo "
+\t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
+\t";
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -103,7 +116,7 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
 
     public function getDebugInfo()
     {
-        return array (  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
+        return array (  96 => 18,  91 => 16,  87 => 15,  83 => 14,  79 => 13,  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -127,17 +140,13 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
 {% endblock %}
 
 {% block body %}
-    <form method=\"POST\" id=\"taskForm\">
-        <label for=\"username\">Your name</label>
-        <input class=\"form-control\" type=\"text\" placeholder=\"Your name\" name=\"username\">
-        <label for=\"title\">Task name</label>
-        <input class=\"form-control\" type=\"text\" placeholder=\"Task name\" name=\"title\">
-        <div class=\"form-group\">
-            <label for=\"description\">Task Description</label>
-            <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\" name=\"description\"></textarea>
-        </div>
-        <button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
-    </form>
+\t{{ form_start(form) }}
+\t\t{{ form_row(form.author) }}
+\t\t{{ form_row(form.title) }}
+\t\t{{ form_row(form.description) }}
+\t\t{{ form_row(form.complete) }}
+\t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
+\t{{ form_end(form) }}
 {% endblock %}", "task/add.html.twig", "/home/alex/Bureau/ecv/php/to_do_list/app/Resources/views/task/add.html.twig");
     }
 }

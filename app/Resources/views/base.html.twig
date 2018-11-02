@@ -19,10 +19,13 @@
                             <h1 class="display-4">Welcome to the to do list!</h1>
                             <p class="lead">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task.</p>
                             <hr class="my-4">
-                            <div class="w-100 text-center">
-                                <a class="text-center btn btn-primary" href="{{ path('task_add') }}">
+                            <div class="w-100 d-flex justify-content-center">
+                                <a class="mx-auto btn btn-primary mr-auto" href="{{ path('task_add') }}">
                                     <i class="fas fa-plus fa-2x"></i>
                                 </a>
+                                <a class="btn btn-success" href="{{ path('user_add') }}">
+                                    <i class="fas fa-user-plus fa-2x"></i>
+                                </a>                                
                             </div>
                         </div>
                     {% endblock %}

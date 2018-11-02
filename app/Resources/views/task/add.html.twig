@@ -9,15 +9,11 @@
 {% endblock %}
 
 {% block body %}
-    <form method="POST" id="taskForm">
-        <label for="username">Your name</label>
-        <input class="form-control" type="text" placeholder="Your name" name="username">
-        <label for="title">Task name</label>
-        <input class="form-control" type="text" placeholder="Task name" name="title">
-        <div class="form-group">
-            <label for="description">Task Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
-        </div>
-        <button class="btn btn-success" type="submit"><i class="fas fa-plus fa-2x"></i></button>
-    </form>
+	{{ form_start(form) }}
+		{{ form_row(form.author) }}
+		{{ form_row(form.title) }}
+		{{ form_row(form.description) }}
+		{{ form_row(form.complete) }}
+		<button class="btn btn-success" type="submit"><i class="fas fa-plus fa-2x"></i></button>
+	{{ form_end(form) }}
 {% endblock %}

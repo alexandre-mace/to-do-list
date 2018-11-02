@@ -71,7 +71,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
             // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($context["task"], "title", array()), "html", null, true);
             echo " <span class=\"badge badge-primary badge-pill\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "user", array()), "name", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["task"], "author", array()), "name", array()), "html", null, true);
             echo "</span></h2>
                     <p>";
             // line 15
@@ -144,7 +144,7 @@ class __TwigTemplate_ed3b6f6233281fcde1e697ebb86a787e9404d8789b41511fefc508ebca7
         {% for task in tasks %}
             <li class=\"list-group-item  d-flex justify-content-between {{ task.complete  ? 'list-group-item-success' }}\">
                 <div class=\"d-flex flex-column\">
-                    <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.user.name }}</span></h2>
+                    <h2>{{ task.title }} <span class=\"badge badge-primary badge-pill\">{{ task.author.name }}</span></h2>
                     <p>{{ task.description }}</p>
                 </div>
                 

@@ -2,35 +2,55 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\User;
+use Doctrine\ORM\Mapping as ORM;
 
-
+/**
+ * Task
+ *
+ * @ORM\Table(name="task")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
+ */
 class Task
 {
-    private static $_taskNumbers = 0;
-
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
     private $title;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
     private $description;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="complete", type="boolean")
+     */
     private $complete;
 
-    private $user;
-
-
-    public function __construct($title, $description, $complete = false, User $user)
-    {
-        self::$_taskNumbers++;
-		$this->id = uniqid();
-        $this->title = $title;
-        $this->description = $description;
-        $this->complete = $complete;
-        $this->user = $user;
-    }
     /**
-     * Get the value of id
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     */
+    private $author;
+
+    /**
+     * Get id
+     *
+     * @return int
      */
     public function getId()
     {
@@ -38,29 +58,11 @@ class Task
     }
 
     /**
-     * Set the value of id
+     * Set title
      *
-     * @return  self
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of title
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set the value of title
+     * @param string $title
      *
-     * @return  self
+     * @return Task
      */
     public function setTitle($title)
     {
@@ -70,17 +72,21 @@ class Task
     }
 
     /**
-     * Get the value of description
+     * Get title
+     *
+     * @return string
      */
-    public function getDescription()
+    public function getTitle()
     {
-        return $this->description;
+        return $this->title;
     }
 
     /**
-     * Set the value of description
+     * Set description
      *
-     * @return  self
+     * @param string $description
+     *
+     * @return Task
      */
     public function setDescription($description)
     {
@@ -88,18 +94,23 @@ class Task
 
         return $this;
     }
+
     /**
-     * Get the value of complete
+     * Get description
+     *
+     * @return string
      */
-    public function getComplete()
+    public function getDescription()
     {
-        return $this->complete;
+        return $this->description;
     }
 
     /**
-     * Set the value of complete
+     * Set complete
      *
-     * @return  self
+     * @param boolean $complete
+     *
+     * @return Task
      */
     public function setComplete($complete)
     {
@@ -109,22 +120,53 @@ class Task
     }
 
     /**
-     * Get the value of user
-     */ 
-    public function getUser()
+     * Get complete
+     *
+     * @return bool
+     */
+    public function getComplete()
     {
-        return $this->user;
+        return $this->complete;
     }
 
     /**
-     * Set the value of user
-     *
-     * @return  self
-     */ 
-    public function setUser($user)
+     * @return bool
+     */
+    public function isComplete()
     {
-        $this->user = $user;
+        return $this->complete;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @param mixed $author
+     *
+     * @return self
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
 
         return $this;
     }
 }
+

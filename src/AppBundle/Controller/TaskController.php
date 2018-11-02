@@ -3,61 +3,56 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Task;
-use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use AppBundle\Service\TaskSessionHandler;
+use Doctrine\ORM\EntityManagerInterface;
+use AppBundle\Handler\AddTaskHandler;
+use AppBundle\Handler\UpdateTaskHandler;
+use AppBundle\Handler\DeleteTaskHandler;
+use AppBundle\Form\TaskType;
 
 class TaskController extends Controller
 {
     /**
      * @Route("/", name="task_list")
      */
-    public function listAction(Request $request, TaskSessionHandler $taskSessionHandler)
+    public function listAction(EntityManagerInterface $manager)
     {
         return $this->render('task/list.html.twig', [
-            'tasks' => $taskSessionHandler->loadAll(),
+            'tasks' => $manager->getRepository(Task::class)->findAll(),
         ]);
     }
 
     /**
-     * @Route("/add", name="task_add")
+     * @Route("/task/add", name="task_add")
      */
-    public function addAction(Request $request, TaskSessionHandler $taskSessionHandler)
+    public function addAction(Request $request, AddTaskHandler $handler)
     {
-        if ($request->getMethod() === "POST") {
-            $username = $request->request->get('username');
-            $title = $request->request->get('title');
-            $description = $request->request->get('description');
-            $tasks = $taskSessionHandler->loadAll();
-            $tasks[] = new Task($title, $description, false, new User($username));
-
-            $taskSessionHandler->setTasks($tasks);
+        $form = $this->createForm(TaskType::class)->handleRequest($request);
+        if ($handler->handle($form)) {
             return $this->redirectToRoute('task_list');
         }
         return $this->render('task/add.html.twig', [
-            'task' => 'task',
+            'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/update/{id}", name="task_update")
+     * @Route("/task/update/{id}", name="task_update")
      */
-    public function updateAction(Request $request, $id, TaskSessionHandler $taskSessionHandler)
+    public function updateAction(Task $task, UpdateTaskHandler $handler)
     {
-        $task = $taskSessionHandler->loadOne($id);
-        $task->setComplete(!$task->getComplete());
+        $handler->handle($task);
         return $this->redirectToRoute('task_list');
     }
 
     /**
-     * @Route("/delete/{id}", name="task_delete")
+     * @Route("/task/delete/{id}", name="task_delete")
      */
-    public function deleteAction(Request $request, $id, TaskSessionHandler $taskSessionHandler)
+    public function deleteAction(Task $task, DeleteTaskHandler $handler)
     {
-        $newTasks = $taskSessionHandler->deleteOne($id);
-        $taskSessionHandler->setTasks($newTasks);
+        $handler->handle($task);
         return $this->redirectToRoute('task_list');
     }
 }

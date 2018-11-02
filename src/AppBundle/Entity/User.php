@@ -1,20 +1,38 @@
 <?php
+
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ */
 class User
 {
-    private static $_userNumbers = 0;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
     private $name;
 
-    public function __construct($name)
-    {
-        self::$_userNumbers++;
-		$this->id = self::$_userNumbers;
-        $this->name = $name;
-    }
+
     /**
-     * Get the value of id
+     * Get id
+     *
+     * @return int
      */
     public function getId()
     {
@@ -22,29 +40,11 @@ class User
     }
 
     /**
-     * Set the value of id
+     * Set name
      *
-     * @return  self
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
+     * @param string $name
      *
-     * @return  self
+     * @return User
      */
     public function setName($name)
     {
@@ -52,4 +52,19 @@ class User
 
         return $this;
     }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function __toString() {
+        return $this->name;
+    }
 }
+
