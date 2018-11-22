@@ -78,21 +78,24 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
         // line 13
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "author", array()), 'row');
         echo "
-\t\t";
-        // line 14
+\t\t<ul id=\"autocomplete\">
+\t\t\t<li class=\"form-control autocomplete-option\">toto</li>
+\t\t</ul>
+    \t";
+        // line 17
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", array()), 'row');
         echo "
 \t\t";
-        // line 15
+        // line 18
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "description", array()), 'row');
         echo "
 \t\t";
-        // line 16
+        // line 19
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "complete", array()), 'row');
         echo "
 \t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
 \t";
-        // line 18
+        // line 21
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 ";
@@ -116,7 +119,7 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
 
     public function getDebugInfo()
     {
-        return array (  96 => 18,  91 => 16,  87 => 15,  83 => 14,  79 => 13,  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
+        return array (  99 => 21,  94 => 19,  90 => 18,  86 => 17,  79 => 13,  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -142,7 +145,10 @@ class __TwigTemplate_37e195f4d3e21140739c155138cf814f320e3557ceac4cf5956b3f622fe
 {% block body %}
 \t{{ form_start(form) }}
 \t\t{{ form_row(form.author) }}
-\t\t{{ form_row(form.title) }}
+\t\t<ul id=\"autocomplete\">
+\t\t\t<li class=\"form-control autocomplete-option\">toto</li>
+\t\t</ul>
+    \t{{ form_row(form.title) }}
 \t\t{{ form_row(form.description) }}
 \t\t{{ form_row(form.complete) }}
 \t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>

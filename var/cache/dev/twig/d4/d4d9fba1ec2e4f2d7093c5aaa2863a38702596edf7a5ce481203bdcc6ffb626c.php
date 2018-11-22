@@ -78,9 +78,10 @@ class __TwigTemplate_81d4ebb1354517140bfbf009d583b5f470812ba5482e06c10680d666e88
         // line 13
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "name", array()), 'row');
         echo "
+        <ul id=\"autocomplete\"></ul>
 \t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
 \t";
-        // line 15
+        // line 16
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 ";
@@ -104,7 +105,7 @@ class __TwigTemplate_81d4ebb1354517140bfbf009d583b5f470812ba5482e06c10680d666e88
 
     public function getDebugInfo()
     {
-        return array (  84 => 15,  79 => 13,  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
+        return array (  85 => 16,  79 => 13,  74 => 12,  65 => 11,  50 => 4,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -130,6 +131,7 @@ class __TwigTemplate_81d4ebb1354517140bfbf009d583b5f470812ba5482e06c10680d666e88
 {% block body %}
 \t{{ form_start(form) }}
 \t\t{{ form_row(form.name) }}
+        <ul id=\"autocomplete\"></ul>
 \t\t<button class=\"btn btn-success\" type=\"submit\"><i class=\"fas fa-plus fa-2x\"></i></button>
 \t{{ form_end(form) }}
 {% endblock %}", "user/add.html.twig", "/home/alex/Bureau/ecv/php/to_do_list/app/Resources/views/user/add.html.twig");

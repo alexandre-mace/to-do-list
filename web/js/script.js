@@ -1,10 +1,8 @@
 $(function () {
-
-	$('#appbundle_user_name').keyup(function (e) {
+	$('#appbundle_task_author').keyup(function (e) {
 		var url = $('span').data('url')
-		console.log(url);
 
-		const word = $('#appbundle_user_name').val();
+		const word = $('#appbundle_task_author').val();
 		$.ajax({
 			type: "POST",
 			url: '/user/test',
@@ -12,7 +10,7 @@ $(function () {
 				word: word
 			},
 			success: function (response) {
-				console.log(response);
+				autocomplete(response)
 			}
 		});
 	});
@@ -25,7 +23,6 @@ $(function () {
 		update: function (event, ui) {
 			let movement = ui.position.top - ui.originalPosition.top > 0 ? "down" : "up";
 			let url = ui.item.data('url');
-			console.log(url);
 			let end_position = ui.item.index();
 			let start_position = ui.item.data('start_position');
 			$.ajax({
@@ -41,4 +38,16 @@ $(function () {
 			});
 		}
 	});
+
+	function autocomplete(names) {
+        $('#autocomplete').empty()
+        names.forEach(function (name) {
+            $('#autocomplete').append(`<li id="${name}">${name}</li>`);
+		})
+
+    }
+
+    $('#autocomplete').on('click', 'li', function () {
+        $('#appbundle_task_author').val($(this).html());
+    })
 });

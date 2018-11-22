@@ -33,8 +33,13 @@ class UserController extends Controller
      */
     public function test(Request $request, EntityManagerInterface $manager) {
         if ($request->isXmlHttpRequest()) {
-            $word = $_POST['word'];
-            var_dump($manager->getRepository(User::class)->findByWord($word));die;
+            $word = $request->request->get('word');
+            $users = $manager->getRepository(User::class)->findByWord($word);
+            $userNames = [];
+            foreach ($users as $user) {
+                $userNames[] = $user->getName();
+            }
+            return $this->json($userNames);
         }
     }
 }
