@@ -12,6 +12,15 @@ use AppBundle\Handler\UpdateTaskHandler;
 use AppBundle\Handler\DeleteTaskHandler;
 use AppBundle\Form\TaskType;
 use AppBundle\Handler\UpdateTaskPositionHandler;
+use AppBundle\Event\PositionUpdatedEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
+use Symfony\Component\Stopwatch\Stopwatch;
+use AppBundle\EventListener\PositionTaskListener;
+use Symfony\Component\HttpFoundation\RequestStack;
+use AppBundle\Service\PositionSorter;
+
+
 
 class TaskController extends Controller
 {
@@ -31,7 +40,7 @@ class TaskController extends Controller
     public function addAction(Request $request, AddTaskHandler $handler)
     {
         $form = $this->createForm(TaskType::class)->handleRequest($request);
-        if ($handler->handle($form)) {
+        if ($handler->handle($form, true)) {
             return $this->redirectToRoute('task_list');
         }
         return $this->render('task/add.html.twig', [
@@ -53,7 +62,7 @@ class TaskController extends Controller
      */
     public function updatePositionAction(Task $task, UpdateTaskPositionHandler $handler)
     {
-        $handler->handle($task, $_POST);
+        $handler->handle($task);
         return $this->redirectToRoute('task_list');
     }
 

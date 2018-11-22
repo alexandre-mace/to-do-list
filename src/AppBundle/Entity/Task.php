@@ -51,6 +51,7 @@ class Task
      * @var int
      *
      * @ORM\Column(name="position", type="integer")
+     * @ORM\GeneratedValue()
      */
     private $position;
 

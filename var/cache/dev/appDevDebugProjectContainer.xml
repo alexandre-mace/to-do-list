@@ -97,8 +97,8 @@
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
     <parameter key="database_name">ecv_todolist</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">root</parameter>
+    <parameter key="database_user">localhost</parameter>
+    <parameter key="database_password">localhost</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -508,6 +508,15 @@
     <service id="AppBundle\Controller\UserController" class="AppBundle\Controller\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Event\PositionUpdatedEvent" class="AppBundle\Event\PositionUpdatedEvent" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\EventListener\PositionTaskListener" class="AppBundle\EventListener\PositionTaskListener" public="false" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="position.updated" method="onPositionUpdate"/>
+      <argument type="service" id="AppBundle\Service\PositionSorter"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="AppBundle\EventListener\TaskSubscriber" class="AppBundle\EventListener\TaskSubscriber" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.event_subscriber" connection="default"/>
+    </service>
     <service id="AppBundle\Form\TaskType" class="AppBundle\Form\TaskType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -532,8 +541,9 @@
     </service>
     <service id="AppBundle\Handler\UpdateTaskPositionHandler" class="AppBundle\Handler\UpdateTaskPositionHandler" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <argument type="service" id="session.flash_bag"/>
+      <argument type="service" id="debug.event_dispatcher"/>
     </service>
+    <service id="AppBundle\Service\PositionSorter" class="AppBundle\Service\PositionSorter" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -550,7 +560,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.naftrfo"/>
+      <argument type="service" id="service_locator.ee1zpzg"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -1467,6 +1477,14 @@
       <argument type="service" id="debug.event_dispatcher.inner"/>
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="monolog.logger.event" on-invalid="null"/>
+      <call method="addListener">
+        <argument>position.updated</argument>
+        <argument type="collection">
+          <argument type="service" id="AppBundle\EventListener\PositionTaskListener"/>
+          <argument>onPositionUpdate</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addListener">
         <argument>kernel.controller</argument>
         <argument type="collection">
@@ -3131,6 +3149,9 @@
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
       <argument type="service" id="service_container"/>
+      <call method="addEventSubscriber">
+        <argument type="service" id="AppBundle\EventListener\TaskSubscriber"/>
+      </call>
       <call method="addEventListener">
         <argument type="collection">
           <argument>loadClassMetadata</argument>
@@ -3144,8 +3165,8 @@
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
         <argument key="dbname">ecv_todolist</argument>
-        <argument key="user">root</argument>
-        <argument key="password">root</argument>
+        <argument key="user">localhost</argument>
+        <argument key="password">localhost</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -3641,7 +3662,13 @@
         <argument key="handler" type="service" id="AppBundle\Handler\AddUserHandler" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.naftrfo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator._ld4n44" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.ee1zpzg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\TaskController:addAction" type="service" id="service_locator.yactgqk"/>
@@ -3650,12 +3677,14 @@
         <argument key="AppBundle\Controller\TaskController:updateAction" type="service" id="service_locator.nxernps"/>
         <argument key="AppBundle\Controller\TaskController:updatePositionAction" type="service" id="service_locator.vylb4yj"/>
         <argument key="AppBundle\Controller\UserController:addAction" type="service" id="service_locator.m33pmcd"/>
+        <argument key="AppBundle\Controller\UserController:test" type="service" id="service_locator._ld4n44"/>
         <argument key="AppBundle\Controller\TaskController::addAction" type="service" id="service_locator.yactgqk"/>
         <argument key="AppBundle\Controller\TaskController::deleteAction" type="service" id="service_locator.kgsklev"/>
         <argument key="AppBundle\Controller\TaskController::listAction" type="service" id="service_locator.bq0eyfj"/>
         <argument key="AppBundle\Controller\TaskController::updateAction" type="service" id="service_locator.nxernps"/>
         <argument key="AppBundle\Controller\TaskController::updatePositionAction" type="service" id="service_locator.vylb4yj"/>
         <argument key="AppBundle\Controller\UserController::addAction" type="service" id="service_locator.m33pmcd"/>
+        <argument key="AppBundle\Controller\UserController::test" type="service" id="service_locator._ld4n44"/>
       </argument>
     </service>
     <service id="service_locator.w7xlwgx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">

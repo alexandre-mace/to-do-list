@@ -148,6 +148,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // user_test
+        if ('/test' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::test',  '_route' => 'user_test',);
+        }
+
         // user_add
         if ('/user/add' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\UserController::addAction',  '_route' => 'user_add',);

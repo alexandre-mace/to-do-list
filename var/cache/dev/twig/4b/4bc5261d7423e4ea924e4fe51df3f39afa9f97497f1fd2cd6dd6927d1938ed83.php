@@ -130,7 +130,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
         // line 18
         echo "                        <div class=\"jumbotron\">
                             <h1 class=\"display-4\">Welcome to the to do list!</h1>
-                            <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task.</p>
+                            <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task. <br>Drag and drop to change the order.</p>
                             <hr class=\"my-4\">
                             <div class=\"w-100 d-flex justify-content-center\">
                                 <a class=\"mx-auto btn btn-primary mr-auto\" href=\"";
@@ -244,7 +244,7 @@ class __TwigTemplate_d8084cf4c55f6741eaa6f431bdb583bd6f3ec24a2cd6e62fa27120a4c37
                     {% block header %}
                         <div class=\"jumbotron\">
                             <h1 class=\"display-4\">Welcome to the to do list!</h1>
-                            <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task.</p>
+                            <p class=\"lead\">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task. <br>Drag and drop to change the order.</p>
                             <hr class=\"my-4\">
                             <div class=\"w-100 d-flex justify-content-center\">
                                 <a class=\"mx-auto btn btn-primary mr-auto\" href=\"{{ path('task_add') }}\">

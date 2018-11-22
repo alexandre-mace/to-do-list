@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByWord($word)
+    {
+
+        $qb = $this->createQueryBuilder('u')
+            ->where('u.name LIKE :word')
+            ->setParameter('word',  "%$word")
+            ->getQuery();
+        return $qb->execute();
+    }
 }

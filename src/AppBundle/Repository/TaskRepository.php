@@ -37,4 +37,14 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery();
         return $qb->execute();    
     }
+
+    public function getMaxPosition()
+    {
+        $maxPosition = $this->createQueryBuilder('t')
+            ->select('MAX(t.position)')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $maxPosition; 
+
+    }
 }

@@ -5,23 +5,18 @@ namespace AppBundle\Handler;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Entity\Task;
+use AppBundle\Service\Handler\Handler;
 
-class UpdateTaskHandler
+class UpdateTaskHandler extends Handler
 {
-    private $manager;
-    private $flashBag;
-
-    public function __construct(EntityManagerInterface $manager, FlashBagInterface $flashBag)
-    {
-        $this->manager = $manager;
-        $this->flashBag = $flashBag;
-    }
-
-    public function handle(Task $task)
+    public function handle($task, $newData = false)
     {
         $task->setComplete(!$task->getComplete());
-        $this->manager->flush();
-        $this->flashBag->add('success', 'The task has been successfully updated !');
-        return true;
+        parent::handle($task);
+    }
+
+    public function addFlash()
+    {
+        $this->flashBag->add('success', 'The new task has been successfully updated !');
     }
 }

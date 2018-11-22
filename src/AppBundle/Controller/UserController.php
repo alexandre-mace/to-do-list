@@ -4,7 +4,9 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Handler\AddUserHandler;
@@ -24,5 +26,14 @@ class UserController extends Controller
         return $this->render('user/add.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/test", name="user_test")
+     */
+    public function test(Request $request, EntityManagerInterface $manager) {
+        if ($request->isXmlHttpRequest()) {
+            var_dump($manager->getRepository(User::class)->findByWord($word));die;
+        }
     }
 }
