@@ -29,10 +29,11 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/test", name="user_test")
+     * @Route("/user/test", name="user_test")
      */
     public function test(Request $request, EntityManagerInterface $manager) {
         if ($request->isXmlHttpRequest()) {
+            $word = $_POST['word'];
             var_dump($manager->getRepository(User::class)->findByWord($word));die;
         }
     }

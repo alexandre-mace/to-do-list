@@ -15,7 +15,7 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
 
         $qb = $this->createQueryBuilder('u')
             ->where('u.name LIKE :word')
-            ->setParameter('word',  "%$word")
+            ->setParameter('word', '%'.$word.'%')
             ->getQuery();
         return $qb->execute();
     }

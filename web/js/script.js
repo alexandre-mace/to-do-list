@@ -1,16 +1,21 @@
 $(function () {
 
-    $('#target').keypress(function (e) {
-        let word = this.val();
-        $.ajax({
-            type: "POST",
-            url: "url",
-            data: word,
-            success: function (response) {
-                console.log(response);
-            }
-        });
-    });
+	$('#appbundle_user_name').keyup(function (e) {
+		var url = $('span').data('url')
+		console.log(url);
+
+		const word = $('#appbundle_user_name').val();
+		$.ajax({
+			type: "POST",
+			url: '/user/test',
+			data: {
+				word: word
+			},
+			success: function (response) {
+				console.log(response);
+			}
+		});
+	});
 
 	$('#sortable').sortable({
 		start: function (event, ui) {
@@ -20,6 +25,7 @@ $(function () {
 		update: function (event, ui) {
 			let movement = ui.position.top - ui.originalPosition.top > 0 ? "down" : "up";
 			let url = ui.item.data('url');
+			console.log(url);
 			let end_position = ui.item.index();
 			let start_position = ui.item.data('start_position');
 			$.ajax({
@@ -31,8 +37,7 @@ $(function () {
 					movement: movement
 				},
 				dataType: "json",
-				success: function (response) {
-				}
+				success: function (response) {}
 			});
 		}
 	});
