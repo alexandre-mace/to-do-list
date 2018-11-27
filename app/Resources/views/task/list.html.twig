@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form_start(form, {'attr': {'class': 'd-flex justify-content-around'}}) }}
-        {{ form_row(form.complete) }}
-        {{ form_row(form.author) }}
-        {{ form_row(form.field) }}
-        {{ form_row(form.order) }}
+    {{ form_start(form) }}
+    {{ form_row(form.author) }}
+    {{ form_row(form.field) }}
+    {{ form_row(form.order) }}
+    {{ form_row(form.complete) }}
     {{ form_end(form) }}
     {% if tasks is empty %}
         <div class="jumbotron">
