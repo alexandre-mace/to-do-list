@@ -2,8 +2,12 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\User;
 use AppBundle\Form\EventListener\AuthorAutocompletedSubscriber;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -13,66 +17,38 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Doctrine\ORM\EntityManagerInterface;
 
 
-class TaskType extends AbstractType
+class FilterType extends AbstractType
 {
-    private $manager;
-
-    public function __construct(EntityManagerInterface $manager)
-    {
-        $this->manager = $manager;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('description')
-            ->add('complete')
-            ->add('author', TextType::class)
-            ->addEventSubscriber(new AuthorAutocompletedSubscriber($this->manager))
+            ->add('complete', CheckboxType::class, [
+                'required' => false
+            ])
+            ->add('author', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => 'name',
+                'required' => false
+            ])
+            ->add('field', ChoiceType::class,[
+                'choices' => [
+                    'author' => 'u.name',
+                    'complete' => 't.complete',
+                    'title' => 't.title',
+                    'new' => 't.id'
+                ],
+
+            ])
+            ->add('order', ChoiceType::class,[
+                'choices' => [
+                    'croissant' => 'ASC',
+                    'décroissant' => 'DESC',
+                ],
+            ])
+            ->add('submit', SubmitType::class)
         ;
     }
-
-    public function onPreSubmit(FormEvent $event)
-    {
-        $user = $event->getData();
-        $form = $event->getForm();
-
-        if (!$user) {
-            return;
-        }
-        // checks whether the user has chosen to display their email or not.
-        // If the data was submitted previously, the additional value that
-        // is included in the request variables needs to be removed.
-/*        if (true === $user['show_email']) {
-            $form->add('email', EmailType::class);
-        } else {
-            unset($user['email']);
-            $event->setData($user);
-        }*/
-    }
-
-
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Task'
-        ));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_task';
-    }
-
-
 }

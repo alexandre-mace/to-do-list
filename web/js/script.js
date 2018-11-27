@@ -1,19 +1,6 @@
 $(function () {
-	$('#appbundle_task_author').keyup(function (e) {
-		var url = $('span').data('url')
 
-		const word = $('#appbundle_task_author').val();
-		$.ajax({
-			type: "POST",
-			url: '/user/test',
-			data: {
-				word: word
-			},
-			success: function (response) {
-				autocomplete(response)
-			}
-		});
-	});
+	// SORT BY POSITION
 
 	$('#sortable').sortable({
 		start: function (event, ui) {
@@ -39,8 +26,26 @@ $(function () {
 		}
 	});
 
+	// USERNAME AUTOCOMPLETION
+
+    $('#appbundle_task_author').keyup(function (e) {
+        var url = $('span').data('url');
+
+        const word = $('#appbundle_task_author').val();
+        $.ajax({
+            type: "POST",
+            url: '/user/autocomplete',
+            data: {
+                word: word
+            },
+            success: function (response) {
+                autocomplete(response)
+            }
+        });
+    });
+
 	function autocomplete(names) {
-        $('#autocomplete').empty()
+        $('#autocomplete').empty();
         names.forEach(function (name) {
             $('#autocomplete').append(`<li id="${name}">${name}</li>`);
 		})

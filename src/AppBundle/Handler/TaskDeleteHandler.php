@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Entity\Task;
 
-class DeleteTaskHandler
+class TaskDeleteHandler
 {
     private $manager;
     private $flashBag;

@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Service\Handler\Handler;
 
-class AddTaskHandler extends Handler
+class TaskAddHandler extends Handler
 {
     public function addFlash()
     {

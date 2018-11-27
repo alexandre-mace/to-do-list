@@ -13,7 +13,7 @@ use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
 use Symfony\Component\Stopwatch\Stopwatch;
 use AppBundle\EventListener\PositionTaskListener;
 
-class UpdateTaskPositionHandler
+class TaskUpdatePositionHandler
 {
     private $manager;
     private $dispatcher;

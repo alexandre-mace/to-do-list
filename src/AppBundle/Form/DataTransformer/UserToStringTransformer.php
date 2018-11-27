@@ -7,44 +7,41 @@
  */
 namespace AppBundle\Form\DataTransformer;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\DataTransformerInterface;
 
-class ObjectToStringTransformer
+class UserToStringTransformer implements DataTransformerInterface
 {
-    private $entityManager;
+    private $manager;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $manager)
     {
-        $this->entityManager = $entityManager;
+        $this->manager = $manager;
     }
 
-    public function transform($object)
+    public function transform($user)
     {
-        if (null === $object) {
+        if (null === $user) {
             return '';
         }
 
-        return $object->getName();
+        return $user->getName();
     }
 
     public function reverseTransform($string)
     {
-        $object = $this->entityManager
-            ->getRepository(Issue::class)
-            // query for the issue with this id
-            ->find($string)
+        $author = $this->manager
+            ->getRepository(User::class)
+            ->findOneBy(['name' => $string])
         ;
 
-        if (null === $issue) {
-            // causes a validation error
-            // this message is not shown to the user
-            // see the invalid_message option
-            throw new TransformationFailedException(sprintf(
-                'An issue with number "%s" does not exist!',
-                $issueNumber
-            ));
+        if (null === $author) {
+            $author = new User();
+            $author->setName($string);
+            $this->manager->persist($author);
         }
 
-        return $issue;
+        return $author;
     }
 }

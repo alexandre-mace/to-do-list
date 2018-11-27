@@ -3,15 +3,16 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Task;
+use AppBundle\Form\FilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
-use AppBundle\Handler\AddTaskHandler;
-use AppBundle\Handler\UpdateTaskHandler;
-use AppBundle\Handler\DeleteTaskHandler;
+use AppBundle\Handler\TaskAddHandler;
+use AppBundle\Handler\TaskCheckHandler;
+use AppBundle\Handler\TaskDeleteHandler;
 use AppBundle\Form\TaskType;
-use AppBundle\Handler\UpdateTaskPositionHandler;
+use AppBundle\Handler\TaskUpdatePositionHandler;
 use AppBundle\Event\PositionUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
@@ -27,17 +28,19 @@ class TaskController extends Controller
     /**
      * @Route("/", name="task_list")
      */
-    public function listAction(EntityManagerInterface $manager)
+    public function listAction(EntityManagerInterface $manager, Request $request)
     {
+        $form = $this->createForm(FilterType::class, ['field' => 't.id', 'order' => 'ASC'])->handleRequest($request);
         return $this->render('task/list.html.twig', [
-            'tasks' => $manager->getRepository(Task::class)->findAll(),
+            'tasks' => $manager->getRepository(Task::class)->getFilteredTasks($form->getData()),
+            'form' => $form->createView(),
         ]);
     }
 
     /**
      * @Route("/task/add", name="task_add")
      */
-    public function addAction(Request $request, AddTaskHandler $handler)
+    public function addAction(Request $request, TaskAddHandler $handler)
     {
         $form = $this->createForm(TaskType::class)->handleRequest($request);
         if ($handler->handle($form, true)) {
@@ -49,9 +52,18 @@ class TaskController extends Controller
     }
 
     /**
+     * @Route("/task/check/{id}", name="task_check")
+     */
+    public function checkAction(Task $task, TaskCheckHandler $handler)
+    {
+        $handler->handle($task);
+        return $this->redirectToRoute('task_list');
+    }
+
+    /**
      * @Route("/task/update/{id}", name="task_update")
      */
-    public function updateAction(Task $task, UpdateTaskHandler $handler)
+    public function updateAction(Task $task, TaskCheckHandler $handler)
     {
         $handler->handle($task);
         return $this->redirectToRoute('task_list');
@@ -60,7 +72,7 @@ class TaskController extends Controller
     /**
      * @Route("/task/update/position/{id}", name="task_update_position")
      */
-    public function updatePositionAction(Task $task, UpdateTaskPositionHandler $handler)
+    public function updatePositionAction(Task $task, TaskUpdatePositionHandler $handler)
     {
         $handler->handle($task);
         return $this->redirectToRoute('task_list');
@@ -69,7 +81,7 @@ class TaskController extends Controller
     /**
      * @Route("/task/delete/{id}", name="task_delete")
      */
-    public function deleteAction(Task $task, DeleteTaskHandler $handler)
+    public function deleteAction(Task $task, TaskDeleteHandler $handler)
     {
         $handler->handle($task);
         return $this->redirectToRoute('task_list');
