@@ -57,19 +57,4 @@ class UserController extends Controller
         $handler->handle($user);
         return $this->redirectToRoute('user_list');
     }
-
-    /**
-     * @Route("/user/autocomplete", name="user_autocomplete")
-     */
-    public function autocompleteAction(Request $request, EntityManagerInterface $manager) {
-        if ($request->isXmlHttpRequest()) {
-            $word = $request->request->get('word');
-            $users = $manager->getRepository(User::class)->findByWord($word);
-            $userNames = [];
-            foreach ($users as $user) {
-                $userNames[] = $user->getName();
-            }
-            return $this->json($userNames);
-        }
-    }
 }
