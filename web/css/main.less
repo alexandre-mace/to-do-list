@@ -1,0 +1,12 @@
+form[name="appbundle_task"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .form-group:nth-of-type(-n+2) {
+        flex-basis: 454px;
+        min-width: 454px;
+    }
+    .form-group:nth-of-type(n+3) {
+        flex-basis: 100%;
+    }
+}
