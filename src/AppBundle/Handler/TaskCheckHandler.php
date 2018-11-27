@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Entity\Task;
 use AppBundle\Service\Handler\Handler;
 
-class UpdateTaskHandler extends Handler
+class CheckTaskHandler extends Handler
 {
     public function handle($task, $newData = false)
     {
