@@ -3,7 +3,6 @@
 namespace AppBundle\Handler;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Entity\Task;
 
 class TaskDeleteHandler

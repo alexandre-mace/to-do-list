@@ -3,20 +3,22 @@
 namespace AppBundle\Handler;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use AppBundle\Entity\Task;
-use AppBundle\Service\Handler\Handler;
 
-class TaskCheckHandler extends Handler
+class TaskCheckHandler
 {
-    public function handle($task, $newData = false)
+    private $manager;
+
+    public function __construct(EntityManagerInterface $manager)
+    {
+        $this->manager = $manager;
+    }
+
+    public function handle(Task $task)
     {
         $task->setComplete(!$task->getComplete());
-        parent::handle($task);
+        $this->manager->flush();
+        return true;
     }
 
-    public function addFlash()
-    {
-        $this->flashBag->add('success', 'The new task has been successfully updated !');
-    }
 }

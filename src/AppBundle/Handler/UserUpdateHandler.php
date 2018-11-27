@@ -27,7 +27,6 @@ class UserUpdateHandler
             $this->manager->flush();
             return true;
         }
-
         return false;
     }
 }

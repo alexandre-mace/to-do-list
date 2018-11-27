@@ -3,13 +3,25 @@
 namespace AppBundle\Handler;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-use AppBundle\Service\Handler\Handler;
+use Symfony\Component\Form\FormInterface;
 
-class TaskAddHandler extends Handler
+class TaskAddHandler
 {
-    public function addFlash()
+    private $manager;
+
+    public function __construct(EntityManagerInterface $manager)
     {
-        $this->flashBag->add('success', 'The new task has been successfully added !');
+        $this->manager = $manager;
+    }
+
+    public function handle(FormInterface $form)
+    {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->manager->persist($form->getData());
+            $this->manager->flush();
+            return true;
+        }
+
+        return false;
     }
 }
