@@ -43,10 +43,15 @@ class UserController extends Controller
     /**
      * @Route("/user/update/{id}", name="user_update")
      */
-    public function updateAction(User $user, UserUpdateHandler $handler)
+    public function updateAction(User $user, UserUpdateHandler $handler, Request $request)
     {
-        $handler->handle($user);
-        return $this->redirectToRoute('user_list');
+        $form = $this->createForm(UserType::class, $user)->handleRequest($request);
+        if ($handler->handle($form)) {
+            return $this->redirectToRoute('user_list');
+        }
+        return $this->render('user/update.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

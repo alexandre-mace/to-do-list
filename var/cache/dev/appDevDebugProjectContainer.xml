@@ -540,9 +540,10 @@
     </service>
     <service id="AppBundle\Handler\TaskDeleteHandler" class="AppBundle\Handler\TaskDeleteHandler" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <argument type="service" id="session.flash_bag"/>
     </service>
-    <service id="AppBundle\Handler\TaskUpdateHandler" class="AppBundle\Handler\TaskUpdateHandler" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Handler\TaskUpdateHandler" class="AppBundle\Handler\TaskUpdateHandler" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="AppBundle\Handler\TaskUpdatePositionHandler" class="AppBundle\Handler\TaskUpdatePositionHandler" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -555,7 +556,9 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="session.flash_bag"/>
     </service>
-    <service id="AppBundle\Handler\UserUpdateHandler" class="AppBundle\Handler\UserUpdateHandler" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Handler\UserUpdateHandler" class="AppBundle\Handler\UserUpdateHandler" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="AppBundle\Service\PositionSorter" class="AppBundle\Service\PositionSorter" public="false" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -573,7 +576,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.4ouu1zi"/>
+      <argument type="service" id="service_locator.pcovztt"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -1659,14 +1662,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -3667,6 +3662,12 @@
         <argument key="handler" type="service" id="AppBundle\Handler\TaskCheckHandler" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id="service_locator.bqumobo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="handler" type="service" id="AppBundle\Handler\TaskUpdateHandler" on-invalid="ignore"/>
+      </argument>
+    </service>
     <service id="service_locator.aeiuzpw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -3703,14 +3704,14 @@
         <argument key="handler" type="service" id="AppBundle\Handler\UserDeleteHandler" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id="service_locator.4ouu1zi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.pcovztt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\TaskController:addAction" type="service" id="service_locator.as6e6gd"/>
         <argument key="AppBundle\Controller\TaskController:checkAction" type="service" id="service_locator.zuflqdy"/>
         <argument key="AppBundle\Controller\TaskController:deleteAction" type="service" id="service_locator.poqs_hl"/>
         <argument key="AppBundle\Controller\TaskController:listAction" type="service" id="service_locator.bq0eyfj"/>
-        <argument key="AppBundle\Controller\TaskController:updateAction" type="service" id="service_locator.zuflqdy"/>
+        <argument key="AppBundle\Controller\TaskController:updateAction" type="service" id="service_locator.bqumobo"/>
         <argument key="AppBundle\Controller\TaskController:updatePositionAction" type="service" id="service_locator.aeiuzpw"/>
         <argument key="AppBundle\Controller\UserController:addAction" type="service" id="service_locator.f5_e11k"/>
         <argument key="AppBundle\Controller\UserController:autocompleteAction" type="service" id="service_locator._ld4n44"/>
@@ -3721,7 +3722,7 @@
         <argument key="AppBundle\Controller\TaskController::checkAction" type="service" id="service_locator.zuflqdy"/>
         <argument key="AppBundle\Controller\TaskController::deleteAction" type="service" id="service_locator.poqs_hl"/>
         <argument key="AppBundle\Controller\TaskController::listAction" type="service" id="service_locator.bq0eyfj"/>
-        <argument key="AppBundle\Controller\TaskController::updateAction" type="service" id="service_locator.zuflqdy"/>
+        <argument key="AppBundle\Controller\TaskController::updateAction" type="service" id="service_locator.bqumobo"/>
         <argument key="AppBundle\Controller\TaskController::updatePositionAction" type="service" id="service_locator.aeiuzpw"/>
         <argument key="AppBundle\Controller\UserController::addAction" type="service" id="service_locator.f5_e11k"/>
         <argument key="AppBundle\Controller\UserController::autocompleteAction" type="service" id="service_locator._ld4n44"/>

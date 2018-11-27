@@ -9,13 +9,13 @@
 
 {% block body %}
     {{ form_start(form) }}
-    {{ form_row(form.author) }}
-    <ul id="autocomplete">
-        <li class="form-control autocomplete-option">toto</li>
-    </ul>
-    {{ form_row(form.title) }}
-    {{ form_row(form.description) }}
-    {{ form_row(form.complete) }}
-    <button class="btn btn-success" type="submit"><i class="fas fa-plus fa-2x"></i></button>
+        {{ form_row(form.author) }}
+        <ul id="autocomplete">
+            <li class="form-control autocomplete-option">toto</li>
+        </ul>
+        {{ form_row(form.title) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.complete) }}
+        <button class="btn btn-success" type="submit"><i class="fas fa-plus fa-2x"></i></button>
     {{ form_end(form) }}
 {% endblock %}

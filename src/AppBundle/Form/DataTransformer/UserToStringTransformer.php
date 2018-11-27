@@ -31,6 +31,9 @@ class UserToStringTransformer implements DataTransformerInterface
 
     public function reverseTransform($string)
     {
+        if(empty($string)){
+            return null;
+        }
         $author = $this->manager
             ->getRepository(User::class)
             ->findOneBy(['name' => $string])

@@ -3,7 +3,7 @@
 namespace AppBundle\Tests\Entity;
 
 use PHPUnit\Framework\TestCase;
-use App\Entity\User;
+use AppBundle\Entity\User;
 
 class UserTest extends TestCase
 {

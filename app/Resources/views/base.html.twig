@@ -23,17 +23,17 @@
                                 <p class="lead">Here is a simple to do list made in symfony 3.4, get started by adding a brand new task. <br>Drag and drop to change the order.</p>
                             {% endblock %}
                             <hr class="my-4">
-                            <div class="d-flex flex-wrap">
-                                <a class="btn btn-success w-50 p-3" href="{{ path('task_add') }}">
+                            <div class="d-flex justify-content-around">
+                                <a class="btn btn-success p-3" href="{{ path('task_add') }}">
                                     <i class="fas fa-plus fa-2x"></i>
                                 </a>
-                                <a class="btn btn-success w-50 p-3" href="{{ path('user_add') }}">
+                                <a class="btn btn-success p-3" href="{{ path('user_add') }}">
                                     <i class="fas fa-user-plus fa-2x"></i>
                                 </a>
-                                <a class="btn btn-info w-50 p-3" href="{{ path('task_list') }}">
+                                <a class="btn btn-info p-3" href="{{ path('task_list') }}">
                                     <i class="fas fa-tasks fa-2x"></i>
                                 </a>
-                                <a class="btn btn-info w-50 p-3" href="{{ path('user_list') }}">
+                                <a class="btn btn-info p-3" href="{{ path('user_list') }}">
                                     <i class="fas fa-users fa-2x"></i>
                                 </a>
                             </div>

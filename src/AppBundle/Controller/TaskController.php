@@ -13,14 +13,7 @@ use AppBundle\Handler\TaskCheckHandler;
 use AppBundle\Handler\TaskDeleteHandler;
 use AppBundle\Form\TaskType;
 use AppBundle\Handler\TaskUpdatePositionHandler;
-use AppBundle\Event\PositionUpdatedEvent;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
-use Symfony\Component\Stopwatch\Stopwatch;
-use AppBundle\EventListener\PositionTaskListener;
-use Symfony\Component\HttpFoundation\RequestStack;
-use AppBundle\Service\PositionSorter;
-
+use AppBundle\Handler\TaskUpdateHandler;
 
 
 class TaskController extends Controller
@@ -63,10 +56,15 @@ class TaskController extends Controller
     /**
      * @Route("/task/update/{id}", name="task_update")
      */
-    public function updateAction(Task $task, TaskCheckHandler $handler)
+    public function updateAction(Task $task, TaskUpdateHandler $handler, Request $request)
     {
-        $handler->handle($task);
-        return $this->redirectToRoute('task_list');
+        $form = $this->createForm(TaskType::class, $task)->handleRequest($request);
+        if ($handler->handle($form)) {
+            return $this->redirectToRoute('task_list');
+        }
+        return $this->render('task/update.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
