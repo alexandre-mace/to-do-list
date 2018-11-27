@@ -20,6 +20,8 @@ class TaskTest extends TestCase
         $this->assertEquals(true, $task->isComplete());
         $this->assertEquals(1, $task->getPosition());
         $this->assertNull($task->getId());
+        $task->setId(9);
+        $this->assertEquals(9, $task->getId());
     }
 
     public function testEntityRelations()

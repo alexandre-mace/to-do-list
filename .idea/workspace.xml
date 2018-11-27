@@ -2,28 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29c778ab-03f6-4ac3-bba1-0f8ae59934f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/TaskControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/UserControllerTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/update.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/update.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/add.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/add.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/AppBundle.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/AppBundle.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/TaskController.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Controller/TaskController.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/UserController.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Controller/UserController.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Controller/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Controller/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Task.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Entity/Task.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/User.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Entity/User.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Entity/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Entity/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Event/PositionUpdatedEvent.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Event/PositionUpdatedEvent.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Event/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Event/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Event/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Event/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/PositionTaskListener.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/EventListener/PositionTaskListener.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/TaskSubscriber.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/EventListener/TaskSubscriber.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/EventListener/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/EventListener/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/UserToStringTransformer.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/UserToStringTransformer.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/DataTransformer/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/FilterType.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/FilterType.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/TaskType.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/TaskType.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/UserType.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/UserType.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Form/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Form/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TaskAddHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/TaskAddHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TaskCheckHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/TaskCheckHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TaskDeleteHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/TaskDeleteHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TaskUpdateHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/TaskUpdateHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TaskUpdatePositionHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/TaskUpdatePositionHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/UserAddHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/UserAddHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/UserDeleteHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/UserDeleteHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/UserUpdateHandler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/UserUpdateHandler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Handler/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/TaskRepository.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Repository/TaskRepository.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/UserRepository.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Repository/UserRepository.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Repository/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Repository/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Handler/Handler.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/Handler/Handler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Handler/HandlerInterface.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/Handler/HandlerInterface.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Handler/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/Handler/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Handler/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/Handler/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/PositionSorter.php.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/PositionSorter.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/Service/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/Service/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/dashboard.html" afterPath="$PROJECT_DIR$/build/coverage-html/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/coverage-html/index.html" afterPath="$PROJECT_DIR$/build/coverage-html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Task.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Task.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/UserToStringTransformer.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/UserToStringTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Handler/TaskDeleteHandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Handler/TaskDeleteHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Handler/TaskUpdateHandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Handler/TaskUpdateHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Handler/UserUpdateHandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Handler/UserUpdateHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppBundle/Entity/UserTest.php" afterPath="$PROJECT_DIR$/tests/AppBundle/Entity/UserTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/TaskType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/TaskType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php" afterPath="$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/script.js" afterPath="$PROJECT_DIR$/web/js/script.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +73,8 @@
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="66" selection-end-column="11" />
+            <state relative-caret-position="630">
+              <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
               <folding>
                 <element signature="e#40#66#0#PHP" expanded="true" />
               </folding>
@@ -46,78 +82,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskUpdateHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Handler/TaskUpdateHandler.php">
+      <file leaf-file-name="TaskType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/TaskType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="e#117#157#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="45" column="89" lean-forward="false" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
-              <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskAddHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Handler/TaskAddHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskDeleteHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Handler/TaskDeleteHandler.php">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserUpdateHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Handler/UserUpdateHandler.php">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="450">
+              <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Task.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Task.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="157" column="7" lean-forward="false" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
               <folding>
-                <element signature="e#117#157#0#PHP" expanded="true" />
+                <element signature="e#36#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/task/add.html.twig">
+      <file leaf-file-name="TaskTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="414">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding>
+                <element signature="e#42#73#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/task/update.html.twig">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="730">
+              <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,14 +151,14 @@
       <file leaf-file-name="TaskControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/TaskControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="98" selection-end-column="5" />
+            <state relative-caret-position="1167">
+              <caret line="65" column="14" lean-forward="false" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserControllerTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserControllerTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/UserControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
@@ -166,9 +192,9 @@
       <find>IsDone</find>
       <find>Product</find>
       <find>App</find>
-      <find>create</find>
       <find>Task</find>
       <find>task</find>
+      <find>create</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,18 +209,15 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Handler/UpdateTaskPositionHandler.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Handler/CheckTaskHandler.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Handler/UserDeleteHandler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/EventListener/AuthorAutocompletedSubscriber.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/list.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/TaskRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/StringToObjectTransformer.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/ObjectToStringTransformer.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/TaskType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/update.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/add.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/task/add.html.twig" />
         <option value="$PROJECT_DIR$/web/js/script.js" />
-        <option value="$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/UserToStringTransformer.php" />
@@ -207,10 +230,13 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Handler/UserUpdateHandler.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Handler/TaskUpdateHandler.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/task/update.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/TaskControllerTest.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/UserControllerTest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/TaskType.php" />
       </list>
     </option>
   </component>
@@ -384,6 +410,12 @@
               <item name="to_do_list" type="b2602c69:ProjectViewProjectNode" />
               <item name="to_do_list" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="to_do_list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="to_do_list" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -399,6 +431,9 @@
     <property name="SearchEverywhereHistoryKey" value="EntityMana&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/AppBundle/Controller" />
       <recent name="$PROJECT_DIR$/tests/AppBundle/Entity" />
@@ -431,17 +466,18 @@
       <option name="presentableId" value="Default" />
       <updated>1542885722142</updated>
       <workItem from="1542885723475" duration="12290000" />
-      <workItem from="1543320638944" duration="27326000" />
+      <workItem from="1543320638944" duration="27950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39616000" />
+    <option name="totallyTimeSpent" value="40240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -472,26 +508,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/TaskType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="98" lean-forward="false" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
-          <folding>
-            <element signature="e#158#198#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Task.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -529,8 +545,8 @@
         <state relative-caret-position="72">
           <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
           <folding>
-            <marker date="1543350237611" expanded="true" signature="1274:1275" ph="..." />
-            <marker date="1543350237611" expanded="true" signature="1274:1287" ph="..." />
+            <marker date="1543358274627" expanded="true" signature="1274:1275" ph="..." />
+            <marker date="1543358274627" expanded="true" signature="1274:1287" ph="..." />
           </folding>
         </state>
       </provider>
@@ -671,16 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/TaskType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding>
-            <element signature="e#34#93#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/user/update.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -694,17 +700,9 @@
         <state relative-caret-position="442">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1543350237611" expanded="true" signature="1274:1275" ph="..." />
-            <marker date="1543350237611" expanded="true" signature="1274:1287" ph="..." />
+            <marker date="1543358274627" expanded="true" signature="1274:1275" ph="..." />
+            <marker date="1543358274627" expanded="true" signature="1274:1287" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="69" lean-forward="false" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,40 +758,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding>
-            <marker date="1542909898447" expanded="true" signature="273:339" ph="SELECT name user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
+            <marker date="1543358274627" expanded="true" signature="273:339" ph="SELECT name user" />
           </folding>
         </state>
       </provider>
@@ -864,30 +834,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/TaskControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="98" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Handler/UserUpdateHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#117#157#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="66" selection-end-column="11" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,6 +861,86 @@
           <folding>
             <element signature="e#90#142#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/TaskControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1167">
+          <caret line="65" column="14" lean-forward="false" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="157" column="7" lean-forward="false" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
+          <folding>
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppBundle/Entity/TaskTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="e#42#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/TaskType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

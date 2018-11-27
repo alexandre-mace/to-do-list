@@ -1,7 +1,5 @@
 $(function () {
-
 	// SORT BY POSITION
-
 	$('#sortable').sortable({
 		start: function (event, ui) {
 			var start_position = ui.item.index();
@@ -25,34 +23,4 @@ $(function () {
 			});
 		}
 	});
-
-	// USERNAME AUTOCOMPLETION
-
-    $('#appbundle_task_author').keyup(function (e) {
-        var url = $('span').data('url');
-
-        const word = $('#appbundle_task_author').val();
-        $.ajax({
-            type: "POST",
-            url: '/user/autocomplete',
-            data: {
-                word: word
-            },
-            success: function (response) {
-                autocomplete(response)
-            }
-        });
-    });
-
-	function autocomplete(names) {
-        $('#autocomplete').empty();
-        names.forEach(function (name) {
-            $('#autocomplete').append(`<li id="${name}">${name}</li>`);
-		})
-
-    }
-
-    $('#autocomplete').on('click', 'li', function () {
-        $('#appbundle_task_author').val($(this).html());
-    })
 });

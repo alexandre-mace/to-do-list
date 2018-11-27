@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Task;
+use AppBundle\Entity\User;
 use AppBundle\Form\FilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,14 +34,17 @@ class TaskController extends Controller
     /**
      * @Route("/task/add", name="task_add")
      */
-    public function addAction(Request $request, TaskAddHandler $handler)
+    public function addAction(EntityManagerInterface $manager, Request $request, TaskAddHandler $handler)
     {
         $form = $this->createForm(TaskType::class)->handleRequest($request);
+        $users = $manager->getRepository(User::class)->findAll();
+
         if ($handler->handle($form, true)) {
             return $this->redirectToRoute('task_list');
         }
         return $this->render('task/add.html.twig', [
             'form' => $form->createView(),
+            'users' => $users
         ]);
     }
 

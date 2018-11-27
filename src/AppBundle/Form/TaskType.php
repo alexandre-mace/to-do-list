@@ -36,26 +36,6 @@ class TaskType extends AbstractType
             ->addModelTransformer($this->transformer);
     }
 
-    public function onPreSubmit(FormEvent $event)
-    {
-        $user = $event->getData();
-        $form = $event->getForm();
-
-        if (!$user) {
-            return;
-        }
-        // checks whether the user has chosen to display their email or not.
-        // If the data was submitted previously, the additional value that
-        // is included in the request variables needs to be removed.
-/*        if (true === $user['show_email']) {
-            $form->add('email', EmailType::class);
-        } else {
-            unset($user['email']);
-            $event->setData($user);
-        }*/
-    }
-
-
     /**
      * {@inheritdoc}
      */
