@@ -48,7 +48,7 @@ parameters:
 		
 ## Run a web server
 
-* Run this command and go to the address indicated in the console (e.g http://localhost:8000/
+* Run this command and go to the address indicated in the console (e.g http://localhost:8000/)
        
         $ php vendor/bin/simple-phpunit
                 
