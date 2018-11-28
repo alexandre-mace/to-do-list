@@ -1,5 +1,7 @@
 # Todo list made with Symfony 3.4
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bd270da39df74f74b455d7f96b9ef66c)](https://app.codacy.com/app/codacy_alexandre-mace/to_do_list?utm_source=github.com&utm_medium=referral&utm_content=alexandre-mace/to_do_list&utm_campaign=Badge_Grade_Settings)
+
 ## Installation 
 
 * Clone the repository and open it
