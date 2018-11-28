@@ -49,7 +49,9 @@ class FilterType extends AbstractType
                     'décroissant' => 'DESC',
                 ],
             ])
-            ->add('Sort', SubmitType::class)
+            ->add('submit', SubmitType::class, [
+                'label' => 'Sort & Filter'
+            ])
         ;
     }
 }

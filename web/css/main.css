@@ -31,3 +31,7 @@ form[name="filter"] .form-group:nth-of-type(n+3) {
 form[name="filter"] .form-group:nth-of-type(n+5) {
   text-align: right;
 }
+
+#filter_submit {
+  text-align: center;
+}
