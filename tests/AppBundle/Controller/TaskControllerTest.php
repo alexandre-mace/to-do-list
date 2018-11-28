@@ -4,6 +4,7 @@
 
 namespace AppBundle\Tests\Controller;
 
+use AppBundle\Entity\Task;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class TaskControllerTest extends WebTestCase
@@ -81,6 +82,34 @@ class TaskControllerTest extends WebTestCase
         $this->assertTrue($client->getResponse()->isRedirection());
         $client->followRedirect();
         $this->assertTrue($client->getResponse()->isSuccessful());
+    }
+
+    public function testUpdatePosition()
+    {
+        $client = self::createClient();
+        static::bootKernel();
+        $manager = static::$kernel->getContainer()->get('doctrine.orm.entity_manager');
+        $task = $manager->getRepository(Task::class)->findOneBy(['description' => 'test edit']);
+        $client->request('GET', '/task/update/position/' .$task->getId());
+        $this->assertTrue($client->getResponse()->isRedirection());
+        $client->followRedirect();
+        $this->assertTrue($client->getResponse()->isSuccessful());
+    }
+
+    public function testFindByGreaterStart()
+    {
+        static::bootKernel();
+        $manager = static::$kernel->getContainer()->get('doctrine.orm.entity_manager');
+        $test = $manager->getRepository(Task::class)->findByGreaterStartPositionAndLowerOrEqualEndPosition(0, 0);
+        $this->assertNotNull($test);
+    }
+
+    public function testFindByLowerStart()
+    {
+        static::bootKernel();
+        $manager = static::$kernel->getContainer()->get('doctrine.orm.entity_manager');
+        $test = $manager->getRepository(Task::class)->findByLowerStartPositionAndGreaterOrEqualEndPosition(0, 0);
+        $this->assertNotNull($test);
     }
 
     public function testDelete()

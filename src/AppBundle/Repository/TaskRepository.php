@@ -13,11 +13,6 @@ use AppBundle\Entity\Task;
  */
 class TaskRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAll()
-    {
-        return $this->findBy(array(), array('position' => 'ASC'));
-    }
-
     public function getFilteredTasks($formData)
     {
         $qb =  $this->createQueryBuilder('t')
