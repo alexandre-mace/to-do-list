@@ -53,6 +53,6 @@ parameters:
 
 * Run this command and go to the address indicated in the console (e.g http://localhost:8000/)
        
-        $ php vendor/bin/simple-phpunit
+        $ php bin/console server:run
                 
         
