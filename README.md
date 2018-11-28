@@ -21,10 +21,15 @@ Todolist made with Symfony 3.4
 		$ composer install
 
 ## Configuration
-*   Customize the .env file
+*   Customize the app/config/parameters.yml file
 
 ```
-DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+parameters:
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: symfony
+    database_user: root
+    database_password: ~
 ```
 
 *   Create database 
