@@ -24,7 +24,7 @@ class TaskController extends Controller
      */
     public function listAction(EntityManagerInterface $manager, Request $request)
     {
-        $form = $this->createForm(FilterType::class, ['field' => 't.id', 'order' => 'ASC'])->handleRequest($request);
+        $form = $this->createForm(FilterType::class, ['field' => 't.position', 'order' => 'ASC'])->handleRequest($request);
         return $this->render('task/list.html.twig', [
             'tasks' => $manager->getRepository(Task::class)->getFilteredTasks($form->getData()),
             'form' => $form->createView(),

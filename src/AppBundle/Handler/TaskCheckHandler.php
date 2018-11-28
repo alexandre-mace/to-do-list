@@ -16,7 +16,7 @@ class TaskCheckHandler
 
     public function handle(Task $task)
     {
-        $task->setComplete(!$task->getComplete());
+        $task->setComplete(!$task->isComplete());
         $this->manager->flush();
         return true;
     }

@@ -130,16 +130,6 @@ class Task
     }
 
     /**
-     * Get complete
-     *
-     * @return bool
-     */
-    public function getComplete()
-    {
-        return $this->complete;
-    }
-
-    /**
      * @return bool
      */
     public function isComplete()

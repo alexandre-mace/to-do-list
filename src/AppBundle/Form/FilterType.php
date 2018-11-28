@@ -35,6 +35,7 @@ class FilterType extends AbstractType
             ])
             ->add('field', ChoiceType::class,[
                 'choices' => [
+                    'priority' => 't.position',
                     'author' => 'u.name',
                     'complete' => 't.complete',
                     'title' => 't.title',
