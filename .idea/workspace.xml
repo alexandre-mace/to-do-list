@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29c778ab-03f6-4ac3-bba1-0f8ae59934f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Task.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Task.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/TaskSubscriber.php" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/TaskSubscriber.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Handler/TaskCheckHandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Handler/TaskCheckHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/script.js" afterPath="$PROJECT_DIR$/web/js/script.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/task/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
@@ -106,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -151,6 +144,9 @@
       <find>Task</find>
       <find>create</find>
       <find>task</find>
+      <find>start_position</find>
+      <find>end_position</find>
+      <find>'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,7 +167,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/update.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/add.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/task/add.html.twig" />
-        <option value="$PROJECT_DIR$/web/js/script.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/DataTransformer/UserToStringTransformer.php" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Entity/UserTest.php" />
@@ -202,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/FilterType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/script.js" />
       </list>
     </option>
   </component>
@@ -413,7 +409,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="TaskRe&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Repository/TaskRepository.php&#10;TaskR&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Repository/TaskRepository.php&#10;Posi&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Service/PositionSorter.php&#10;Position&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Service/PositionSorter.php&#10;Contro&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Controller/TaskController.php&#10;EntityMana&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Su&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/EventListener/TaskSubscriber.php&#10;TaskRe&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Repository/TaskRepository.php&#10;TaskR&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Repository/TaskRepository.php&#10;Posi&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Service/PositionSorter.php&#10;Position&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Service/PositionSorter.php&#10;Contro&#9;FILE&#9;file:///home/alex/Bureau/ecv/php/to_do_list/src/AppBundle/Controller/TaskController.php&#10;EntityMana&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -451,12 +447,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542885722142</updated>
       <workItem from="1542885723475" duration="12290000" />
-      <workItem from="1543320638944" duration="34251000" />
+      <workItem from="1543320638944" duration="35085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46541000" />
+    <option name="totallyTimeSpent" value="47375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
@@ -854,30 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/TaskSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/PositionTaskListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/PositionSorter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -936,6 +908,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/PositionTaskListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/TaskSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
           <folding />
         </state>
       </provider>
